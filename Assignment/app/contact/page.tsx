@@ -89,7 +89,7 @@ export default function ContactPage() {
                 <p className="text-gray-600 mb-2">Customer Support:</p>
                 <p className="text-emerald-600 font-medium">+91 (222) 1333-4567</p>
                 <p className="text-gray-600 mt-2 mb-2">Business Hours:</p>
-                <p className="text-gray-600">Monday - Friday: 9am - 5pm EST</p>
+                <p className="text-gray-600">Monday - Friday: 9am - 5pm IST</p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
