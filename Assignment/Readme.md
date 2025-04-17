@@ -61,9 +61,8 @@ git clone https://github.com/tm33976/Assignment_GFloww_platform.git
 2. Install dependencies:
 
 ```shell
-npm install
-# or
-yarn install
+npm install --legacy-peer-deps      
+
 ```
 
 3. Set up environment variables (if needed):
