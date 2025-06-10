@@ -1,6 +1,6 @@
 ### GigFloww - Freelance Marketplace Platform
 
- ## ▶️ Live Demo - https://assignment-h4f84yj4m-tushars-projects-41b979e6.vercel.app/
+ ## ▶️ Live Demo - https://assignment-blush-zeta.vercel.app/
  
 ## Table of Contents
 
