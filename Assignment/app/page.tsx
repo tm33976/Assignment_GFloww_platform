@@ -5,8 +5,7 @@ import TestimonialSlider from "@/components/testimonial-slider"
 import TestimonialManager from "@/components/testimonial-manager"
 import DetailedProfileSection from "@/components/detailed-profile-section"
 import SignUpForm from "@/components/signup-form"
-import { ArrowRight, Briefcase, Clock, Globe } from "lucide-react"
-// Keep a single lucide-react import block to avoid duplicate symbol build errors in Turbopack
+
 import {
   ArrowRight,
   Briefcase,
@@ -24,54 +23,13 @@ const stats = [
   { label: "Countries represented", value: "120+" },
 ]
 
-const featureHighlights = [
-  {
-    icon: WandSparkles,
-    title: "AI Talent Match",
-    description:
-      "Smart recommendations pair clients with top-fit freelancers based on project goals, past delivery, and style.",
-  },
-  {
-    icon: Zap,
-    title: "Real-Time Availability",
-    description:
-      "Instantly see who is available this week so you can book experts quickly and reduce project kickoff delays.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Trusted Payments",
-    description:
-      "Milestone-based protection and transparent payouts ensure safer collaboration for both freelancers and clients.",
-  },
-]
-
-const productUpdates = [
-  "AI brief assistant",
-  "One-click portfolio import",
-  "Milestone escrow",
-  "Verified creator profiles",
-]
-
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
     <div className="min-h-screen flex flex-col bg-slate-50">
       <Navbar />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-teal-500 to-emerald-600 text-white py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="md:w-1/2 space-y-6">
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight">Your Creative Gig Journey Starts Here</h1>
-                <p className="text-lg md:text-xl opacity-90">
-                  Connect with clients, showcase your talents, and grow your freelance career on the platform built for
-                  creative professionals.
-                </p>
-                <div className="pt-4">
-                  <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 font-semibold text-lg px-8">
-                    Join Now <ArrowRight className="ml-2 h-5 w-5" />
         <section className="relative overflow-hidden bg-gradient-to-br from-teal-600 via-emerald-600 to-cyan-700 text-white px-4 py-24">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.3),_transparent_45%)]" />
           <div className="absolute -top-16 -left-16 h-72 w-72 rounded-full bg-emerald-300/20 blur-3xl" />
@@ -79,6 +37,7 @@ export default function Home() {
 
           <div className="relative container mx-auto max-w-6xl">
             <div className="grid items-center gap-14 md:grid-cols-2">
+              {/* LEFT COLUMN */}
               <div className="space-y-8">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-sm font-medium backdrop-blur">
                   <Sparkles className="h-4 w-4" />
@@ -96,38 +55,41 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col gap-4 sm:flex-row">
-                  <Button asChild size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50 font-semibold text-base px-8">
-                    <Link href="/signup">
-                      Join Now <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
+                  <Button
+                    size="lg"
+                    className="bg-white text-emerald-700 hover:bg-emerald-50 font-semibold text-base px-8"
+                  >
+                    Join Now <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   <Button
-                    asChild
                     size="lg"
                     variant="outline"
                     className="border-white/60 text-white hover:bg-white/10 hover:text-white bg-transparent"
                   >
-                    <Link href="/services/design">Explore Services</Link>
+                    Explore Services
                   </Button>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   {stats.map((item) => (
-                    <div key={item.label} className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                    <div
+                      key={item.label}
+                      className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 backdrop-blur-sm"
+                    >
                       <p className="text-2xl font-bold leading-none">{item.value}</p>
                       <p className="mt-1 text-sm text-emerald-50">{item.label}</p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="md:w-1/2">
+              {/* ↑↑↑ THIS DIV WAS MISSING BEFORE */}
 
+              {/* RIGHT COLUMN */}
               <div className="relative">
                 <div className="absolute -inset-4 rounded-[2rem] bg-white/20 blur-2xl" />
                 <img
                   src="https://media.istockphoto.com/id/1404931955/photo/gold-capital-letter-g.jpg?s=612x612&w=0&k=20&c=elG1xlT-ghWmO6qGvHT2oULEIiQvB1OJqOOkGu4YBBs="
                   alt="Creative professionals collaborating"
-                  className="rounded-lg shadow-xl"
                   className="relative w-full rounded-[2rem] border border-white/40 object-cover shadow-2xl"
                 />
               </div>
@@ -136,121 +98,21 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section className="py-16 px-4 bg-gray-50">
         <section className="py-20 px-4 bg-white">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">About GigFloww</h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-slate-900">About GigFloww</h2>
             <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
-              GigFloww is the premier platform connecting creative professionals with clients worldwide. Our mission is
-              to streamline the gig economy experience, making it easier for talented individuals to find work and for
-              businesses to discover exceptional talent.
+              GigFloww is the premier platform connecting creative professionals with clients worldwide.
             </p>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-16 px-4">
-        <section className="py-20 px-4 bg-slate-50">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold mb-12 text-center text-gray-800">Why Choose GigFloww</h2>
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
-              <Sparkles className="h-4 w-4" />
-              Latest product updates
-            </div>
-            <div className="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {productUpdates.map((update) => (
-                <div
-                  key={update}
-                  className="rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm"
-                >
-                  {update}
-                </div>
-              ))}
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                <div className="bg-emerald-100 p-3 rounded-full w-fit mb-4">
-            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Why Choose GigFloww</h2>
-
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="group rounded-2xl border border-emerald-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-                <div className="mb-4 w-fit rounded-full bg-emerald-100 p-3 transition-colors group-hover:bg-emerald-200">
-                  <Globe className="h-6 w-6 text-emerald-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800">Global Reach</h3>
-                <p className="text-gray-600">
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Global Reach</h3>
-                <p className="text-slate-600">
-                  Connect with clients from around the world and expand your professional network beyond geographical
-                  boundaries.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                <div className="bg-emerald-100 p-3 rounded-full w-fit mb-4">
-              <div className="group rounded-2xl border border-emerald-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-                <div className="mb-4 w-fit rounded-full bg-emerald-100 p-3 transition-colors group-hover:bg-emerald-200">
-                  <Briefcase className="h-6 w-6 text-emerald-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800">Diverse Opportunities</h3>
-                <p className="text-gray-600">
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Diverse Opportunities</h3>
-                <p className="text-slate-600">
-                  Find projects that match your skills and interests, from one-time gigs to long-term collaborations.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                <div className="bg-emerald-100 p-3 rounded-full w-fit mb-4">
-              <div className="group rounded-2xl border border-emerald-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-                <div className="mb-4 w-fit rounded-full bg-emerald-100 p-3 transition-colors group-hover:bg-emerald-200">
-                  <Clock className="h-6 w-6 text-emerald-600" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800">Flexible Schedule</h3>
-                <p className="text-gray-600">
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Flexible Schedule</h3>
-                <p className="text-slate-600">
-                  Work on your own terms and create a schedule that fits your lifestyle and professional goals.
-                </p>
-              </div>
-            </div>
-
-            <div className="text-center mt-12">
-              <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-            <div className="mt-12 rounded-2xl border border-emerald-100 bg-white p-8 shadow-sm">
-              <h3 className="text-2xl font-bold text-slate-900">Built with the latest hiring workflows</h3>
-              <p className="mt-2 text-slate-600">
-                Modern teams hire faster with AI-powered matching, live freelancer availability, and safer milestone
-                payments.
-              </p>
-              <div className="mt-6 grid gap-5 md:grid-cols-3">
-                {featureHighlights.map((feature) => (
-                  <div key={feature.title} className="rounded-xl border border-slate-100 bg-slate-50 p-5">
-                    <feature.icon className="h-5 w-5 text-emerald-600" />
-                    <h4 className="mt-3 font-semibold text-slate-900">{feature.title}</h4>
-                    <p className="mt-2 text-sm text-slate-600">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-12 text-center">
-              <Button variant="outline" className="border-emerald-600 text-emerald-700 hover:bg-emerald-50">
-                Learn More About Our Features
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="py-16 px-4 bg-gray-50">
+        {/* Testimonials */}
         <section className="py-20 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold mb-12 text-center text-gray-800">What Our Users Say</h2>
-            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">What Our Users Say</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">
+              What Our Users Say
+            </h2>
             <TestimonialSlider />
             <div className="mt-12">
               <TestimonialManager />
@@ -260,32 +122,19 @@ export default function Home() {
 
         <DetailedProfileSection />
 
-        {/* Sign Up Section */}
-        <section className="py-16 px-4 bg-white">
+        {/* Sign Up */}
         <section className="py-20 px-4 bg-slate-50">
           <div className="container mx-auto max-w-6xl">
-            <div className="bg-gradient-to-r from-teal-500 to-emerald-600 rounded-2xl p-8 md:p-12">
             <div className="rounded-3xl bg-gradient-to-r from-teal-600 to-emerald-600 p-8 md:p-12 shadow-xl">
               <div className="flex flex-col md:flex-row gap-12">
                 <div className="md:w-1/2">
-                  <h2 className="text-3xl font-bold mb-4 text-white">Join Our Community Today</h2>
+                  <h2 className="text-3xl font-bold mb-4 text-white">
+                    Join Our Community Today
+                  </h2>
                   <p className="text-white text-lg opacity-90 mb-6">
-                    Take the first step toward a more flexible and rewarding career. Sign up now to start exploring
-                    opportunities.
+                    Take the first step toward a more flexible and rewarding career.
                   </p>
-                  <ul className="text-white space-y-2">
-                    <li className="flex items-center">
-                      <span className="mr-2">✓</span> Free account creation
-                    </li>
-                    <li className="flex items-center">
-                      <span className="mr-2">✓</span> Build your professional profile
-                    </li>
-                    <li className="flex items-center">
-                      <span className="mr-2">✓</span> Connect with potential clients
-                    </li>
-                  </ul>
                 </div>
-                <div className="md:w-1/2 bg-white p-6 rounded-xl shadow-lg">
                 <div className="md:w-1/2 rounded-2xl bg-white p-6 shadow-2xl">
                   <SignUpForm />
                 </div>
@@ -294,52 +143,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-gray-800 text-white py-12 px-4">
-      <footer className="bg-slate-900 text-white py-12 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row justify-between">
-            <div className="mb-8 md:mb-0">
-              <h3 className="text-2xl font-bold mb-4">GigFloww</h3>
-              <p className="text-gray-300 max-w-xs">Empowering creative professionals to thrive in the gig economy.</p>
-              <p className="text-slate-300 max-w-xs">Empowering creative professionals to thrive in the gig economy.</p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Platform</h4>
-                <ul className="space-y-2 text-gray-300">
-                <ul className="space-y-2 text-slate-300">
-                  <li>How it Works</li>
-                  <li>Pricing</li>
-                  <li>FAQ</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Company</h4>
-                <ul className="space-y-2 text-gray-300">
-                <ul className="space-y-2 text-slate-300">
-                  <li>About Us</li>
-                  <li>Careers</li>
-                  <li>Blog</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Legal</h4>
-                <ul className="space-y-2 text-gray-300">
-                <ul className="space-y-2 text-slate-300">
-                  <li>Privacy Policy</li>
-                  <li>Terms of Service</li>
-                  <li>Cookie Policy</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-          <div className="border-t border-slate-700 mt-12 pt-8 text-center text-slate-400">
-            <p>© {new Date().getFullYear()} GigFloww. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
