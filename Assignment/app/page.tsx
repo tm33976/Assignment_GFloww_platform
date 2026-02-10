@@ -2,6 +2,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Navbar from "@/components/navbar"
 import TestimonialSlider from "@/components/testimonial-slider"
+import TestimonialManager from "@/components/testimonial-manager"
+import DetailedProfileSection from "@/components/detailed-profile-section"
 import SignUpForm from "@/components/signup-form"
 
 import { ArrowRight, Briefcase, Clock, Globe, ShieldCheck, Sparkles, WandSparkles, Zap } from "lucide-react"
@@ -91,6 +93,15 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                  {stats.map((item) => (
+                    <div key={item.label} className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                      <p className="text-2xl font-bold leading-none">{item.value}</p>
+                      <p className="mt-1 text-sm text-emerald-50">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="relative">
@@ -168,8 +179,13 @@ export default function Home() {
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">What Our Users Say</h2>
             <TestimonialSlider />
+            <div className="mt-12">
+              <TestimonialManager />
+            </div>
           </div>
         </section>
+
+        <DetailedProfileSection />
 
         {/* Sign Up Section */}
         <section className="py-20 px-4 bg-slate-50">
