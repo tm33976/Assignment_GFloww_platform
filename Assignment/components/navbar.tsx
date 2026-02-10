@@ -91,10 +91,12 @@ export default function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-              Log In
+            <Button asChild variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+              <Link href="/login">Log In</Link>
             </Button>
-            <Button className="bg-emerald-600 hover:bg-emerald-700">Sign Up</Button>
+            <Button asChild className="bg-emerald-600 hover:bg-emerald-700">
+              <Link href="/signup">Sign Up</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -167,10 +169,12 @@ export default function Navbar() {
                 Contact
               </Link>
               <div className="pt-4 flex flex-col space-y-3">
-                <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 w-full">
-                  Log In
+                <Button asChild variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 w-full">
+                  <Link href="/login" onClick={closeMenus}>Log In</Link>
                 </Button>
-                <Button className="bg-emerald-600 hover:bg-emerald-700 w-full">Sign Up</Button>
+                <Button asChild className="bg-emerald-600 hover:bg-emerald-700 w-full">
+                  <Link href="/signup" onClick={closeMenus}>Sign Up</Link>
+                </Button>
               </div>
             </div>
           </div>
