@@ -34,7 +34,7 @@ const starterCode = `function App() {
 }`
 
 const getPreviewDocument = (code: string) => {
-  const serializedCode = JSON.stringify(code).replace(/<\/script>/gi, "<\\/script>")
+  const escapedCode = code.replace(/<\/script>/gi, "<\\/script>")
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -69,48 +69,26 @@ const getPreviewDocument = (code: string) => {
     <div id="root"></div>
     <div id="error" style="display: none"></div>
 
-    <script>
+    <script type="text/babel" data-type="module" data-presets="react">
       try {
-        const userCode = ${serializedCode}
-        const transpiled = Babel.transform(userCode, { presets: ["react"] }).code
+        ${escapedCode}
+
         const mountNode = document.getElementById("root")
 
-        const executeUserCode = new Function(
-          "React",
-          "ReactDOM",
-          transpiled +
-            "\\nreturn { app: typeof App !== \"undefined\" ? App : null, globalApp: typeof globalThis !== \"undefined\" ? globalThis.App : null };"
-        )
-
-        const executed = executeUserCode(React, ReactDOM)
-        const AppComponent = executed.app || executed.globalApp
-
-        if (AppComponent) {
-          ReactDOM.createRoot(mountNode).render(React.createElement(AppComponent))
+        if (typeof App !== "undefined") {
+          ReactDOM.createRoot(mountNode).render(<App />)
         } else {
           ReactDOM.createRoot(mountNode).render(
-            React.createElement(
-              "div",
-              { style: { padding: "20px" } },
-              React.createElement(
-                "h2",
-                { style: { fontWeight: "bold", marginBottom: "8px" } },
-                "No App component found."
-              ),
-              React.createElement(
-                "p",
-                null,
-                "Please define function App() in your pasted code."
-              )
-            )
+            <div style={{ padding: "20px" }}>
+              <h2 style={{ fontWeight: "bold", marginBottom: "8px" }}>No App component found.</h2>
+              <p>Please define <code>function App() {{ ... }}</code> in your pasted code.</p>
+            </div>
           )
         }
       } catch (error) {
         const errorBox = document.getElementById("error")
-        if (errorBox) {
-          errorBox.style.display = "block"
-          errorBox.textContent = error?.stack || error?.message || String(error)
-        }
+        errorBox.style.display = "block"
+        errorBox.textContent = error?.stack || error?.message || String(error)
       }
     </script>
 
