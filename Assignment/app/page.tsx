@@ -8,7 +8,7 @@ import SignUpForm from "@/components/signup-form"
 
 import { ArrowRight, Briefcase, Clock, Globe, ShieldCheck, Sparkles, WandSparkles, Zap } from "lucide-react"
 
-import { ArrowRight, Briefcase, Clock, Globe, Sparkles } from "lucide-react"
+
 
 
 const stats = [
