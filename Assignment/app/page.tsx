@@ -94,42 +94,11 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {stats.map((item) => (
-                    <div key={item.label} className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                      <p className="text-2xl font-bold leading-none">{item.value}</p>
-                      <p className="mt-1 text-sm text-emerald-50">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
+               
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {stats.map((item) => (
-                    <div key={item.label} className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                      <p className="text-2xl font-bold leading-none">{item.value}</p>
-                      <p className="mt-1 text-sm text-emerald-50">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {stats.map((item) => (
-                    <div key={item.label} className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                      <p className="text-2xl font-bold leading-none">{item.value}</p>
-                      <p className="mt-1 text-sm text-emerald-50">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
+              
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {stats.map((item) => (
-                    <div key={item.label} className="rounded-xl border border-white/25 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                      <p className="text-2xl font-bold leading-none">{item.value}</p>
-                      <p className="mt-1 text-sm text-emerald-50">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
               <div className="relative">
                 <div className="absolute -inset-4 rounded-[2rem] bg-white/20 blur-2xl" />
