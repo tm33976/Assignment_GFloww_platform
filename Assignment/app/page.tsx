@@ -2,13 +2,18 @@ import { Button } from "@/components/ui/button"
 import Navbar from "@/components/navbar"
 import TestimonialSlider from "@/components/testimonial-slider"
 import SignUpForm from "@/components/signup-form"
+
 import { ArrowRight, Briefcase, Clock, Globe, ShieldCheck, Sparkles, WandSparkles, Zap } from "lucide-react"
+
+import { ArrowRight, Briefcase, Clock, Globe, Sparkles } from "lucide-react"
+
 
 const stats = [
   { label: "Creative freelancers", value: "40K+" },
   { label: "Projects posted monthly", value: "12K" },
   { label: "Countries represented", value: "120+" },
 ]
+
 
 const featureHighlights = [
   {
@@ -32,6 +37,7 @@ const featureHighlights = [
 ]
 
 const productUpdates = ["AI brief assistant", "One-click portfolio import", "Milestone escrow", "Verified creator profiles"]
+
 
 export default function Home() {
   return (
@@ -113,21 +119,6 @@ export default function Home() {
         {/* Features Section */}
         <section className="py-20 px-4 bg-slate-50">
           <div className="container mx-auto max-w-6xl">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
-              <Sparkles className="h-4 w-4" />
-              Latest product updates
-            </div>
-            <div className="mb-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {productUpdates.map((update) => (
-                <div
-                  key={update}
-                  className="rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm"
-                >
-                  {update}
-                </div>
-              ))}
-            </div>
-
             <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Why Choose GigFloww</h2>
 
             <div className="grid gap-8 md:grid-cols-3">
@@ -160,23 +151,6 @@ export default function Home() {
                 <p className="text-slate-600">
                   Work on your own terms and create a schedule that fits your lifestyle and professional goals.
                 </p>
-              </div>
-            </div>
-
-            <div className="mt-12 rounded-2xl border border-emerald-100 bg-white p-8 shadow-sm">
-              <h3 className="text-2xl font-bold text-slate-900">Built with the latest hiring workflows</h3>
-              <p className="mt-2 text-slate-600">
-                Modern teams hire faster with AI-powered matching, live freelancer availability, and safer milestone
-                payments.
-              </p>
-              <div className="mt-6 grid gap-5 md:grid-cols-3">
-                {featureHighlights.map((feature) => (
-                  <div key={feature.title} className="rounded-xl border border-slate-100 bg-slate-50 p-5">
-                    <feature.icon className="h-5 w-5 text-emerald-600" />
-                    <h4 className="mt-3 font-semibold text-slate-900">{feature.title}</h4>
-                    <p className="mt-2 text-sm text-slate-600">{feature.description}</p>
-                  </div>
-                ))}
               </div>
             </div>
 
