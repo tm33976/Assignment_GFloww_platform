@@ -87,6 +87,9 @@ export default function Navbar() {
             <Link href="/contact" className="text-gray-700 hover:text-emerald-600 font-medium">
               Contact
             </Link>
+            <Link href="/playground" className="text-gray-700 hover:text-emerald-600 font-medium">
+              Playground
+            </Link>
           </div>
 
           {/* CTA Buttons */}
@@ -167,6 +170,13 @@ export default function Navbar() {
                 onClick={closeMenus}
               >
                 Contact
+              </Link>
+              <Link
+                href="/playground"
+                className="text-gray-700 hover:text-emerald-600 font-medium py-2"
+                onClick={closeMenus}
+              >
+                Playground
               </Link>
               <div className="pt-4 flex flex-col space-y-3">
                 <Button asChild variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 w-full">
