@@ -2,13 +2,42 @@ import { Button } from "@/components/ui/button"
 import Navbar from "@/components/navbar"
 import TestimonialSlider from "@/components/testimonial-slider"
 import SignUpForm from "@/components/signup-form"
+
+import { ArrowRight, Briefcase, Clock, Globe, ShieldCheck, Sparkles, WandSparkles, Zap } from "lucide-react"
+
 import { ArrowRight, Briefcase, Clock, Globe, Sparkles } from "lucide-react"
+
 
 const stats = [
   { label: "Creative freelancers", value: "40K+" },
   { label: "Projects posted monthly", value: "12K" },
   { label: "Countries represented", value: "120+" },
 ]
+
+
+const featureHighlights = [
+  {
+    icon: WandSparkles,
+    title: "AI Talent Match",
+    description:
+      "Smart recommendations pair clients with top-fit freelancers based on project goals, past delivery, and style.",
+  },
+  {
+    icon: Zap,
+    title: "Real-Time Availability",
+    description:
+      "Instantly see who is available this week so you can book experts quickly and reduce project kickoff delays.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Trusted Payments",
+    description:
+      "Milestone-based protection and transparent payouts ensure safer collaboration for both freelancers and clients.",
+  },
+]
+
+const productUpdates = ["AI brief assistant", "One-click portfolio import", "Milestone escrow", "Verified creator profiles"]
+
 
 export default function Home() {
   return (
