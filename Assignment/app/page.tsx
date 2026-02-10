@@ -105,8 +105,7 @@ export default function Home() {
                 <img
                   src="https://media.istockphoto.com/id/1404931955/photo/gold-capital-letter-g.jpg?s=612x612&w=0&k=20&c=elG1xlT-ghWmO6qGvHT2oULEIiQvB1OJqOOkGu4YBBs="
                   alt="Creative professionals collaborating"
-                  className="relative w-full rounded-[2rem] border border-white/40 object-cover shadow-2xl"
-                />
+                  className="relative w-full rounded-[2rem] border border-white/40 object-cover shadow-2xl"/>
               </div>
             </div>
           </div>
